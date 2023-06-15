@@ -1,0 +1,37 @@
+### Get all posts
+GET http://localhost:3000/api/blogs/
+Content-Type: application/json
+
+### Create new posts
+POST http://localhost:3000/api/blogs/
+Content-Type: application/json
+
+{
+  "title": "new post", 
+  "desc": "new desc"
+}
+
+### Get a post 
+GET http://localhost:3000/api/blogs/4
+Content-Type: application/json
+
+
+### Update a post  
+PUT http://localhost:3000/api/blogs/4
+Content-Type: application/json
+
+{
+  "title": "new post updated", 
+  "desc": "new desc updated"
+}
+
+
+### Delete a post  
+DELETE http://localhost:3000/api/blogs/4
+Content-Type: application/json
+
+
+# 
+# REST Client for Visual Studio Code
+# https://marketplace.visualstudio.com/items?itemName=humao.rest-client
+#
