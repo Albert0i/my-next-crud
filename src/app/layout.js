@@ -13,12 +13,14 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className='bg-slate-100'>
+        <div className='bg-slate-200'>
           <h1 className='pt-4 text-4xl text-center'>my-next-crud</h1>
           <nav className='flex justify-end'>
             <Link href='/' className='hover:text-slate-500'>Home</Link>
             <Link href='/add' className='px-4 hover:text-slate-500'>Add</Link>
-          </nav>
+          </nav>          
+        </div>
+        <div className='bg-slate-100'>
           {children}
         </div>
       </body>
