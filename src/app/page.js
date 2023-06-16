@@ -22,7 +22,7 @@ export default async function Home() {
                               { method: 'DELETE', cache: 'no-store' } );
       console.log(res.status)
       revalidateTag('posts')
-      //revalidatePath('')
+      revalidatePath('/')
     } catch (err) {
         console.log(err);
     }      
