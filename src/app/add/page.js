@@ -1,4 +1,4 @@
-import { revalidatePath } from "next/cache";
+import { revalidatePath, revalidateTag } from "next/cache";
 
 export default async function Add() {   
 
@@ -6,13 +6,14 @@ export default async function Add() {
     "use server";
     const title = data.get('title')
     const desc = data.get('desc')
-    console.log(title, desc)
     try {
-      await fetch( 'http://localhost:3000/api/blogs/', 
-                              { method: 'POST', 
-                                body: JSON.stringify({ title: title, desc: desc }) } );
-      revalidatePath("/");
-
+      const res = await fetch( 'http://localhost:3000/api/blogs/', 
+                              { method: 'POST',
+                                cache: 'no-store', 
+                                body: JSON.stringify({ title: title, desc: desc }) } );      
+      console.log(res.status)
+      revalidateTag('posts')
+      revalidatePath('/')
     } catch (err) {
         console.log(err);
     }      
@@ -22,13 +23,13 @@ export default async function Add() {
     <main className='container p-4 mx-auto'>
       <form action={addPost}>
         <div className='my-2'>
-          <input type='text' id='title' name='title' placeholder='title' autoFocus />
+          <input type='text' id='title' name='title' placeholder='title' className='p-2' autoFocus />
         </div>
         <div className='my-2'>
-          <input type='text' id='desc' name='desc' placeholder='description' />
+          <input type='text' id='desc' name='desc' placeholder='description' className='p-2' />
         </div>
         <div className='my-2'>
-          <button className='px-2 text-white bg-green-500 rounded' type='submit'>Add</button>
+          <button className='px-2 text-white bg-green-500 rounded hover:bg-green-300' type='submit'>Add</button>
         </div>        
       </form>
     </main>

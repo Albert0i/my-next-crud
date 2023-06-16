@@ -3,9 +3,9 @@ import { getPostById, deletePost, updatePost } from '../../../lib/data'
 
 // Get a post 
 export async function GET(req, res) {    
-    console.log(`id=${req.url.split('blogs/')[1]}`)
-    console.log(req)
-    console.log(res)
+    // console.log(`id=${req.url.split('blogs/')[1]}`)
+    // console.log(req)
+    // console.log(res)
     try {
         const id = parseInt(res.params.id)
         const post = getPostById(id)
@@ -20,7 +20,7 @@ export async function GET(req, res) {
 
 // Update a post 
 export async function PUT(req, res) {
-    console.log(`id=${req.url.split('blogs/')[1]}`)
+    //console.log(`id=${req.url.split('blogs/')[1]}`)
     try {        
         const id = parseInt(res.params.id)
         const body = await req.json()
@@ -33,11 +33,11 @@ export async function PUT(req, res) {
 
 // Delete a post 
 export async function DELETE(req, res) {
-    console.log(`id=${req.url.split('blogs/')[1]}`)
+    //console.log(`id=${req.url.split('blogs/')[1]}`)
     try {
         const id = parseInt(res.params.id)
         deletePost(id)
-        return nextResponse.json({ message: 'OK'}, { status:200 })
+        return nextResponse.json({ message: 'OK'}, { status:204 })
     } catch (err) {
         return nextResponse.json({ message: 'Error'}, { status:500 })
     }
