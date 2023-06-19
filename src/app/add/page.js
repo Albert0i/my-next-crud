@@ -7,7 +7,7 @@ export default async function Add() {
     const title = data.get('title')
     const desc = data.get('desc')
     try {
-      const res = await fetch( 'http://localhost:3000/api/blogs/', 
+      const res = await fetch( 'http://localhost:3000/api/blogs', 
                               { method: 'POST',
                                 cache: 'no-store', 
                                 body: JSON.stringify({ title: title, desc: desc }) } );      

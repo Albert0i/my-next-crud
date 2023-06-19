@@ -4,7 +4,7 @@ export default async function Home() {
   
   const getAllPosts = async () => {
     try {
-        const res = await fetch( 'http://localhost:3000/api/blogs/', 
+        const res = await fetch( 'http://localhost:3000/api/blogs', 
                                 { method: 'GET', cache: 'no-store', tags: ['posts'] } );
         const data = await res.json();
         return data
