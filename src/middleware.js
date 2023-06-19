@@ -17,29 +17,6 @@ export async function middleware(req) {
    return response
 }
 
-// export async function middleware(req) {
-//     const response = nextResponse.next()
-  
-//     console.log('middleware in action 1 !')
-//     if (request.nextUrl.pathname.startsWith("/api")) {
-//       response.headers.append("Access-Control-Allow-Origin", "*")
-//       console.log('middleware in action 2 !')
-//     }
-//     //...
-//     return response
-// }
-
-// export function middleware(req) {
-    
-//     console.log(req.method)
-//     console.log(req.url)
-//     console.log(req.nextUrl.pathname)
-    
-//     const response = nextResponse.next()
-    
-//     return response
-// }
-
 export const config = {
   matcher: ['/api/blogs'],
 }

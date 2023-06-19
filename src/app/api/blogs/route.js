@@ -8,7 +8,7 @@ export async function GET(req, res) {
         return nextResponse.json({ message: 'OK', posts}, { status:200 })
     } catch (err) {
         return nextResponse.json({ message: 'Error'}, { status:500 })
-    }
+    }    
 }
 
 // Create a post 
