@@ -7,8 +7,10 @@
     <title>Test Fetch API`</title>
 </head>
 <body>
+    <h3>Test Fetch API</h3>
+    <p>Open developer tools and view console log</p>
     <script>
-        fetch('http://localhost:3000/api/blogs/')
+        fetch('http://localhost:3000/api/blogs')
             .then(res => res.json())
             .then(data => console.log(data))
             .catch(err => console.error(err))
