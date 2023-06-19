@@ -12,7 +12,6 @@ export async function middleware(req) {
    response.headers.append('Access-Control-Allow-Origin', '*')
    response.headers.append('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS')
    response.headers.append('Access-Control-Allow-Headers', 'Content-Type, Authorization')
-   response.headers.append('Access-Control-Max-Age', 300)
    console.log(response.headers)
 
    return response
