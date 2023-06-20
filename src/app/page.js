@@ -44,6 +44,10 @@ export default async function Home() {
             </li>
           ))}
       </ul>
+      <div>{process.env.DB_HOST}</div>
+      <div>{process.env.DB_USER}</div>
+      <div>{process.env.DB_PASS}</div>
+      <div>{process.env.APP_ENV}</div>
     </main>
   )
 }
